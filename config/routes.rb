@@ -10,4 +10,5 @@ Rails.application.routes.draw do
       get 'sort_user_data'
     end
   end
+  resources :tags
 end
