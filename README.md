@@ -18,9 +18,8 @@ Things you may want to cover:
 		"country": "America",
 		"state": "hyderabad",
 		"email_id": "robin@loreal.com"
-	
       }
- * To edit the user data, url is: localhost:3000/users/6,
+ * To edit the user data, url is: localhost:3000/users/user_id,
       json format is :
       {  "id": 6,
 		"first_name": "user2",
@@ -29,6 +28,16 @@ Things you may want to cover:
 		"country": "America",
 		"state": "hyderabad",	
       }
-  * To delete the user data, url is: localhost:3000/users/6,
+ * To delete the user data, url is: localhost:3000/users/user_id,
     json format is :
       {  "id": 6 }
+
+ * To associate tags with user, url is: localhost:3000/users/user_id/add_tag
+     json format is :
+     {  "id":7,
+        "tag_params": 
+        {
+		  "name": "tag1",
+		  "description": "no no no no"
+        }
+     }

@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:update, :destroy]
+  before_action :set_user, only: [:update, :destroy, :add_tag]
 
   def index
-    @user = User.all
+    @user = User.includes(:tags).all
+    render json: @user
   end
 
   def create
@@ -28,6 +29,11 @@ class UsersController < ApplicationController
       format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def add_tag
+    @user.tag_data(params["tag_params"])
+    render json: @user
   end
 
   private
