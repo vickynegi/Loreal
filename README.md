@@ -41,3 +41,8 @@ Things you may want to cover:
 		  "description": "no no no no"
         }
      }
+  * To remove tag from user, url is: localhost:3000/users/user_id/remove_tag
+      json format is :
+      { "id":8,
+        "tag_id" : 5
+      }

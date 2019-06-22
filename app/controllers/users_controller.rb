@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:update, :destroy, :add_tag]
+  before_action :set_user, only: [:update, :destroy, :add_tag, :remove_tag]
 
   def index
     @user = User.includes(:tags).all
@@ -33,6 +33,11 @@ class UsersController < ApplicationController
 
   def add_tag
     @user.tag_data(params["tag_params"])
+    render json: @user
+  end
+
+  def remove_tag
+    @user.tags.find_by(id: params["tag_id"]).delete
     render json: @user
   end
 
