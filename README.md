@@ -66,7 +66,23 @@ Things you may want to cover:
 	    }
 	}
 
-  * * To remove tag from user, url is: localhost:3000/tagss/tag_id/
+  * To remove tag, url is: localhost:3000/tags/tag_id/
       json format is :
       { "id":8
+      }
+  
+  * To sort the tag data, url is: localhost:3000/tags/sort_tag_data,
+      json format is :
+        { "field_operation": "description DESC" }
+ 
+
+  * To do the filters on users, url is: localhost:3000/users/filter_users_data
+    json format is :
+    {
+		"first_name": "",
+		"last_name": "",
+		"age": 25,
+		"country": "rica",
+		"state": "in",
+		"email_id": "lorea"
       }

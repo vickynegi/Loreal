@@ -8,7 +8,12 @@ Rails.application.routes.draw do
     end
     collection do
       get 'sort_user_data'
+      get 'filter_users_data'
     end
   end
-  resources :tags
+  resources :tags do
+  	collection do
+  	  get 'sort_tag_data'
+  	end
+  end
 end

@@ -46,6 +46,13 @@ class UsersController < ApplicationController
     render json: @user
   end
 
+  def filter_users_data
+    @user = User.where("first_name LIKE ? OR last_name LIKE ? OR age = ? OR country LIKE ? OR state LIKE ? OR email_id LIKE ?",
+     "%#{params["first_name"]}%", "%#{params["last_name"]}%", "#{params["age"]}", "%#{params["country"]}%", "%#{params["state"]}%",
+     "%#{params["email_id"]}%")
+    render json: @user
+  end
+
   private
 
     def set_user

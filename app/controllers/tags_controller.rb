@@ -22,6 +22,11 @@ class TagsController < ApplicationController
     end
   end
 
+  def sort_tag_data
+    @tag = Tag.order(params["field_operation"])
+    render json: @tag
+  end
+
   private
 
     def set_tag
