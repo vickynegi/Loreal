@@ -29,3 +29,6 @@ Things you may want to cover:
 		"country": "America",
 		"state": "hyderabad",	
       }
+  * To delete the user data, url is: localhost:3000/users/6,
+    json format is :
+      {  "id": 6 }
