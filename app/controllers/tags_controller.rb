@@ -7,8 +7,7 @@ class TagsController < ApplicationController
   end
 
   def update
-    if @user.tags.find_by(id: params["tag_id"]).update(params["tags_attr"].permit!)
-      @tag = Tag.find_by(id: params["tag_id"])
+    if @tag.update(tag_params)
       render json: @tag
     else
       render json: @tag.errors, status: :unprocessable_entity
@@ -17,12 +16,16 @@ class TagsController < ApplicationController
 
   def destroy
     @tag.destroy
+    respond_to do |format|
+      format.html { redirect_to tags_url, notice: 'Tag was successfully destroyed.' }
+      format.json { head :no_content }
+    end
   end
 
   private
 
     def set_tag
-      @user = User.find_by(id: params["user_id"]) 
+      @tag = Tag.find_by(id: params["id"]) 
     end
 
     def tag_params

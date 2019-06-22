@@ -65,3 +65,8 @@ Things you may want to cover:
 	        "user_id": 7
 	    }
 	}
+
+  * * To remove tag from user, url is: localhost:3000/tagss/tag_id/
+      json format is :
+      { "id":8
+      }
