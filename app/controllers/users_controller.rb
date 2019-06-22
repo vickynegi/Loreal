@@ -41,6 +41,11 @@ class UsersController < ApplicationController
     render json: @user
   end
 
+  def sort_user_data
+    @user = User.order(params["field_operation"])
+    render json: @user
+  end
+
   private
 
     def set_user

@@ -6,5 +6,8 @@ Rails.application.routes.draw do
       get 'add_tag'
       get 'remove_tag'
     end
+    collection do
+      get 'sort_user_data'
+    end
   end
 end

@@ -46,3 +46,8 @@ Things you may want to cover:
       { "id":8,
         "tag_id" : 5
       }
+
+  * To sort the user data, url is: localhost:3000/users/sort_user_data,
+      json format is :
+        { "field_operation": "last_name DESC" }
+ 
