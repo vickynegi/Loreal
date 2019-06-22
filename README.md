@@ -20,4 +20,12 @@ Things you may want to cover:
 		"email_id": "robin@loreal.com"
 	
       }
- 
+ * To edit the user data, url is: localhost:3000/users/6,
+      json format is :
+      {  "id": 6,
+		"first_name": "user2",
+		"last_name": "sde",
+		"age": 26,
+		"country": "America",
+		"state": "hyderabad",	
+      }
