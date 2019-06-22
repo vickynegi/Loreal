@@ -54,3 +54,14 @@ Things you may want to cover:
   * To lists all users data, url is: localhost:3000/users
 
   * To lists all tags data, url is localhost:3000/tags
+
+  * To update the tags, url is: localhost:3000/tags/tag_id,
+      json format is :
+	  {
+	    "tag": {
+	        "id": 2,
+	        "name": "786",
+	        "description": "very good",
+	        "user_id": 7
+	    }
+	}

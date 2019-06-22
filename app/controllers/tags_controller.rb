@@ -6,17 +6,9 @@ class TagsController < ApplicationController
     render json: @tag
   end
 
-  def create
-  	@tag = Tag.new(tag_params)
-    if @tag.save
-      render json: @tag, status: :created, location: @tag
-    else
-      render json: @tag.errors, status: :unprocessable_entity
-    end
-  end
-
   def update
-    if @tag.update(tag_params)
+    if @user.tags.find_by(id: params["tag_id"]).update(params["tags_attr"].permit!)
+      @tag = Tag.find_by(id: params["tag_id"])
       render json: @tag
     else
       render json: @tag.errors, status: :unprocessable_entity
@@ -30,10 +22,10 @@ class TagsController < ApplicationController
   private
 
     def set_tag
-      @tag = tag.find(params[:id])
+      @user = User.find_by(id: params["user_id"]) 
     end
 
     def tag_params
-      params.require(:tag).permit(:name, :description)
+      params.permit(:name, :description)
     end
 end
